@@ -1,0 +1,45 @@
+1)Initialize mongoDb:
+mongo
+
+2) See all the Databases available:
+show dbs
+
+3)Create a database:
+use assignment
+
+4)Create a Collection:
+db.createCollection("users")
+
+5)Insert a Document:
+db.users.insert({"first_name" : "Imran","last_name" : "Khan","email" : "Imran@gmail.com","gender" : "male","age" : 24})
+
+6)Insert many Documents:
+db.users.insertMany([{"first_name" : "Safoora","last_name" : "Banegar","email" : "safooraa@gmail.com","gender" : "female","age" : 20},{"first_name" : "Navera","last_name" : "Banegar","email" : "nava@gmail.com","gender" : "female","age" : 21},{"first_name" : "Juveriya","last_name" : "Banegar","email" : "juv@gmail.com","gender" : "female","age" : 18},{"first_name" : "Khalida","last_name" : "Banegar","email" : "khalida@gmail.com","gender" : "female","age" : 40},{"first_name" : "Hussain","last_name" : "Banegar","email" : "hussain@gmail.com","gender" : "male","age" : 29}])
+
+7)View the Documents:
+db.users.find({}).pretty()
+
+8) Completing 10 document insertion:
+db.users.insertMany([{"first_name" : "Sumaiya","last_name" : "Patel","email" : "sumaiya@gmail.com","gender" : "female","age" : 23},{"first_name" : "Abdul Rehman","last_name" : "Banegar","email" : "arbanegar@gmail.com","gender" : "male","age" : 50},{"first_name" : "Gazanfar","last_name" : "Banegar","email" : "gaz@gmail.com","gender" : "male","age" :"30"}])
+
+9)View the Documents:
+db.users.find({}).pretty()
+
+10)Find One document with last name:
+db.users.findOne({"last_name":"Patel"})
+
+11)Update a document individualy:
+db.users.update({"first_name":"Imran"},{$set:{"ip_address":1010}})
+db.users.update({"first_name":"Safoora"},{$set:{"ip_address":7777}})
+
+12) Update many documents:
+db.users.updateMany({"gender":"male"},{$set:{"eligible":"true"}})
+
+13) Removing Single document:
+db.users.remove({"first_name":"Navera"})
+
+14) Removing Many documents:
+db.users.deleteMany({"gender":"female"})
+
+15) deleting the Database
+db.dropDatabase()
